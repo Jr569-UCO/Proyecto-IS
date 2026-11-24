@@ -1,0 +1,410 @@
+{
+  "title": "SG-CICT · Manual completo de construcción",
+  "date": "2026-11-24",
+  "pages": 175,
+  "chapters": 33,
+  "source_text_files": 32,
+  "assets": 5,
+  "source_sha256": {
+    ".gitignore": "a6d0ba751071bd880ba033b1d1994cfeff0510ee9a4fd0b32d033afcf186d2d0",
+    "README.md": "4c0b18afb69e5da612f8ecc71e01d939c503c9109a337deeaae1f092b79e782a",
+    "data/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/API.md": "286eda55cd9d5cd8046b437adaf33b96b9b4ad6e8f506206d8d3abc76fcadb24",
+    "docs/ARQUITECTURA.md": "b4fa6f5f8cfc26e9f5bbce5d8f100213d50a3c4523be8e34175761b76356c701",
+    "docs/DECISIONES.md": "9025a0d7948647aa29b610930cd3d79b8ea12f9c3110332d599da037dce99e32",
+    "docs/GUIA-CODIGO.md": "cfa4d376a76df0bd4d10e89c793768634a30c95eca6cfcde296de2f8bc98cf06",
+    "docs/MANUAL-USUARIO.md": "3fac4c2c1868f13c7725b395b10e030e0ccf41d1b3898897561f70aab5a51921",
+    "docs/PLAN-TRABAJO.md": "1922a0de55e70c3562708374114348e80403bb412e1117a3b07bda3847a6f85c",
+    "docs/PRUEBAS.md": "1bae3b7872351e1d752fc5ac96ad93f595ae7d0a77af642fb41b2f3a2da32829",
+    "docs/REQUISITOS.md": "9020ac2e6421dbe4bb11b3bbc0a05716a95b929bc1dec4afa969a51e35ddc3fb",
+    "docs/capturas/01-acceso.png": "a73577c1485fe89e01cbf1482303a1fb0d3671c5c66172e58536c5349d2dfc38",
+    "docs/capturas/02-panel.png": "039c5a04835ac9027ba5c48c63697bb22d45445f08040b56052e04035fe6dc99",
+    "docs/capturas/03-catalogo.png": "697536185b1675ae42b4e4fabe71b1b6daecf8e9caa4d9a0d04954ab0df07530",
+    "docs/capturas/04-informes.png": "afbc80e6eadeac58466964f802646c2b3620a5576e9ae98267a622302b5ab58c",
+    "docs/capturas/05-movil.png": "1f6de38d65e8429f4b8c344de978c3fb501cf130c8679bd14210ab10e5f5eb44",
+    "package.json": "ad00ea706ef53f5b4703216206da372733083f596712a38fe533ca312c6db5dc",
+    "public/app.ts": "95204584b07577cb8ee3bbeb512da0d562e77100e34c52bd8d65fc2486f82cc2",
+    "public/favicon.svg": "a6d458bddb7618826bc37565e2c05ccb3018c567d88b30e112f928263f55c89b",
+    "public/index.html": "4444e3a58e35a9796da639c36f67cb2a7d1dcdcbb8a195a1f5db53744e09f279",
+    "public/styles.css": "192bba63f1d1a9cea4acec0a02d58b5ec3760d5cacb56d4496e41059bcbb0419",
+    "public/ui.ts": "ae8066c5f1d642c43adcae8df55e8b3edda669c5489976694e9595358fd61436",
+    "public/views.ts": "b797dd2dbd2d772b2760bcf56e35000628cb979e0cc48a4dd0608c22f1d4e92d",
+    "scripts/browser-check.ts": "8abcafeb4ce8dc94b4579ac4fa42f5dd452b63a75819c48494f8f78e8a7a037b",
+    "scripts/check.ts": "eb3c3aa6ac1054047d9ca3fe29dfef6882bdb915cda6d55b9da12660697499b2",
+    "scripts/reset.ts": "39cd2165a15e90450b57fc7693aa2527e6834c31445f6531b0289469a09f42a5",
+    "src/auth.ts": "9325a66173c8c35b29f8e3452dd07d988ae3d8f6bda6aab1fbe9160ebfe0b0dc",
+    "src/database.ts": "ba5e76cd16635d8c315a8f77587fe39cbc80cf52679e979bd5670efe4b23cd11",
+    "src/model.ts": "b89f533ae61c3602d9b56f9eff7cc0f6d366003ee1ce4b4f289c5a20377986fd",
+    "src/schema.sql": "698f88ccf7454053a51aa957a6e81f805765490a1a9275a9b697eb0573f1ec8e",
+    "src/seed.ts": "19a70cad3f9a165f17b59545a6282bdc4beb8764b17160e8534da30b5ce0ebfe",
+    "src/server.ts": "286f66d8c3b025043e3400aa1ccfef1c2775c3ff2bb7fde99083546c3411f9af",
+    "src/system.ts": "48c0d8b6ce74a82d396576f2c802edbee88dbbe93c5e848e61ad085b30caa9dc",
+    "src/time.ts": "2a41ac4fc8bd35d74b30fb2149723ace61f8e4cf8aca653f7986fc4227faafd9",
+    "tests/http.test.ts": "107ee7416dc27b35838e3d704fb414c46c2122126bfbb975d2aa1b15813c9192",
+    "tests/persistence.test.ts": "d3493bda8575d67cb24fb6860d8768f0f94bd9560574b5f4339e63c134b26854",
+    "tests/system.test.ts": "cfdce174dedfe9cec99a1cc163fd530dcb8e5345cf9be608d29380e054aa0f5b"
+  },
+  "toc": [
+    {
+      "number": "1",
+      "title": "Cómo utilizar este libro",
+      "page": 5
+    },
+    {
+      "number": "2",
+      "title": "Preparar el entorno y la carpeta",
+      "page": 7
+    },
+    {
+      "number": "3",
+      "title": "Mapa de la aplicación y orden de construcción",
+      "page": 9
+    },
+    {
+      "number": "4",
+      "title": "TypeScript y web: lo necesario para leer el código",
+      "page": 11
+    },
+    {
+      "number": "5",
+      "title": "Configuración: package.json y .gitignore",
+      "page": 14
+    },
+    {
+      "number": "6",
+      "title": "src/model.ts: el vocabulario de los datos",
+      "page": 16
+    },
+    {
+      "number": "7",
+      "title": "src/time.ts: fechas, zonas e intervalos",
+      "page": 19
+    },
+    {
+      "number": "8",
+      "title": "src/schema.sql: diseñar la persistencia",
+      "page": 21
+    },
+    {
+      "number": "9",
+      "title": "src/database.ts: abrir y confirmar cambios",
+      "page": 24
+    },
+    {
+      "number": "10",
+      "title": "src/auth.ts: cuentas, contraseñas y sesiones",
+      "page": 26
+    },
+    {
+      "number": "11",
+      "title": "src/seed.ts: preparar una demostración reproducible",
+      "page": 29
+    },
+    {
+      "number": "12",
+      "title": "src/system.ts: implementar las reglas completas",
+      "page": 31
+    },
+    {
+      "number": "13",
+      "title": "src/server.ts: convertir operaciones en HTTP",
+      "page": 37
+    },
+    {
+      "number": "14",
+      "title": "public/index.html: el documento de entrada",
+      "page": 41
+    },
+    {
+      "number": "15",
+      "title": "public/ui.ts: formatos, iconos y HTML seguro",
+      "page": 43
+    },
+    {
+      "number": "16",
+      "title": "public/views.ts: escribir todas las pantallas",
+      "page": 45
+    },
+    {
+      "number": "17",
+      "title": "public/app.ts: conectar formularios, estado y peticiones",
+      "page": 49
+    },
+    {
+      "number": "18",
+      "title": "public/styles.css: construir el diseño completo",
+      "page": 54
+    },
+    {
+      "number": "19",
+      "title": "public/favicon.svg: el detalle del navegador",
+      "page": 59
+    },
+    {
+      "number": "20",
+      "title": "tests/system.test.ts: verificar las reglas",
+      "page": 60
+    },
+    {
+      "number": "21",
+      "title": "tests/persistence.test.ts: cerrar y volver a abrir",
+      "page": 63
+    },
+    {
+      "number": "22",
+      "title": "tests/http.test.ts: verificar la frontera web",
+      "page": 65
+    },
+    {
+      "number": "23",
+      "title": "scripts/check.ts: una comprobación rápida y honesta",
+      "page": 67
+    },
+    {
+      "number": "24",
+      "title": "scripts/reset.ts: reiniciar datos con una copia",
+      "page": 69
+    },
+    {
+      "number": "25",
+      "title": "scripts/browser-check.ts: probar los clics de verdad",
+      "page": 71
+    },
+    {
+      "number": "26",
+      "title": "README, docs y archivos de apoyo: documentar lo que existe",
+      "page": 73
+    },
+    {
+      "number": "27",
+      "title": "Construcción guiada en diez hitos",
+      "page": 76
+    },
+    {
+      "number": "28",
+      "title": "Tres operaciones seguidas de extremo a extremo",
+      "page": 79
+    },
+    {
+      "number": "29",
+      "title": "Errores frecuentes y cómo resolverlos",
+      "page": 81
+    },
+    {
+      "number": "30",
+      "title": "Ejercicios para apropiarte del proyecto",
+      "page": 83
+    },
+    {
+      "number": "31",
+      "title": "Ampliaciones y decisiones pendientes",
+      "page": 85
+    },
+    {
+      "number": "32",
+      "title": "Glosario y hoja de consulta",
+      "page": 87
+    },
+    {
+      "number": "33",
+      "title": "Fuentes y cómo comprobar esta edición",
+      "page": 90
+    },
+    {
+      "number": "A.1",
+      "title": ".gitignore",
+      "page": 92
+    },
+    {
+      "number": "A.2",
+      "title": "README.md",
+      "page": 93
+    },
+    {
+      "number": "A.3",
+      "title": "data/.gitkeep",
+      "page": 96
+    },
+    {
+      "number": "A.4",
+      "title": "docs/API.md",
+      "page": 97
+    },
+    {
+      "number": "A.5",
+      "title": "docs/ARQUITECTURA.md",
+      "page": 99
+    },
+    {
+      "number": "A.6",
+      "title": "docs/DECISIONES.md",
+      "page": 102
+    },
+    {
+      "number": "A.7",
+      "title": "docs/GUIA-CODIGO.md",
+      "page": 104
+    },
+    {
+      "number": "A.8",
+      "title": "docs/MANUAL-USUARIO.md",
+      "page": 106
+    },
+    {
+      "number": "A.9",
+      "title": "docs/PLAN-TRABAJO.md",
+      "page": 109
+    },
+    {
+      "number": "A.10",
+      "title": "docs/PRUEBAS.md",
+      "page": 111
+    },
+    {
+      "number": "A.11",
+      "title": "docs/REQUISITOS.md",
+      "page": 114
+    },
+    {
+      "number": "A.12",
+      "title": "package.json",
+      "page": 116
+    },
+    {
+      "number": "A.13",
+      "title": "public/app.ts",
+      "page": 117
+    },
+    {
+      "number": "A.14",
+      "title": "public/favicon.svg",
+      "page": 123
+    },
+    {
+      "number": "A.15",
+      "title": "public/index.html",
+      "page": 124
+    },
+    {
+      "number": "A.16",
+      "title": "public/styles.css",
+      "page": 125
+    },
+    {
+      "number": "A.17",
+      "title": "public/ui.ts",
+      "page": 136
+    },
+    {
+      "number": "A.18",
+      "title": "public/views.ts",
+      "page": 138
+    },
+    {
+      "number": "A.19",
+      "title": "scripts/browser-check.ts",
+      "page": 145
+    },
+    {
+      "number": "A.20",
+      "title": "scripts/check.ts",
+      "page": 148
+    },
+    {
+      "number": "A.21",
+      "title": "scripts/reset.ts",
+      "page": 149
+    },
+    {
+      "number": "A.22",
+      "title": "src/auth.ts",
+      "page": 150
+    },
+    {
+      "number": "A.23",
+      "title": "src/database.ts",
+      "page": 152
+    },
+    {
+      "number": "A.24",
+      "title": "src/model.ts",
+      "page": 153
+    },
+    {
+      "number": "A.25",
+      "title": "src/schema.sql",
+      "page": 154
+    },
+    {
+      "number": "A.26",
+      "title": "src/seed.ts",
+      "page": 155
+    },
+    {
+      "number": "A.27",
+      "title": "src/server.ts",
+      "page": 157
+    },
+    {
+      "number": "A.28",
+      "title": "src/system.ts",
+      "page": 161
+    },
+    {
+      "number": "A.29",
+      "title": "src/time.ts",
+      "page": 167
+    },
+    {
+      "number": "A.30",
+      "title": "tests/http.test.ts",
+      "page": 169
+    },
+    {
+      "number": "A.31",
+      "title": "tests/persistence.test.ts",
+      "page": 171
+    },
+    {
+      "number": "A.32",
+      "title": "tests/system.test.ts",
+      "page": 172
+    }
+  ],
+  "layout_blocks_checked": 5600,
+  "physical_code_rows": 4500,
+  "full_source_files": [
+    ".gitignore",
+    "README.md",
+    "data/.gitkeep",
+    "docs/API.md",
+    "docs/ARQUITECTURA.md",
+    "docs/DECISIONES.md",
+    "docs/GUIA-CODIGO.md",
+    "docs/MANUAL-USUARIO.md",
+    "docs/PLAN-TRABAJO.md",
+    "docs/PRUEBAS.md",
+    "docs/REQUISITOS.md",
+    "package.json",
+    "public/app.ts",
+    "public/favicon.svg",
+    "public/index.html",
+    "public/styles.css",
+    "public/ui.ts",
+    "public/views.ts",
+    "scripts/browser-check.ts",
+    "scripts/check.ts",
+    "scripts/reset.ts",
+    "src/auth.ts",
+    "src/database.ts",
+    "src/model.ts",
+    "src/schema.sql",
+    "src/seed.ts",
+    "src/server.ts",
+    "src/system.ts",
+    "src/time.ts",
+    "tests/http.test.ts",
+    "tests/persistence.test.ts",
+    "tests/system.test.ts"
+  ]
+}
