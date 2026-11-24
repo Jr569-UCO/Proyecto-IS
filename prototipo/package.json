@@ -1,0 +1,14 @@
+{
+  "name": "sg-cict-prototipo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Prototipo educativo del SG-CICT en TypeScript, HTML y CSS, sin dependencias externas.",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "start": "node src/server.ts",
+    "dev": "node --watch src/server.ts",
+    "test": "node --test --test-isolation=none tests/*.test.ts",
+    "check": "node scripts/check.ts"
+  }
+}

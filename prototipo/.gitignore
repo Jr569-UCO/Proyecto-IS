@@ -1,0 +1,7 @@
+data/*.sqlite*
+data/*.db*
+data/backups/
+node_modules/
+coverage/
+*.log
+.DS_Store
